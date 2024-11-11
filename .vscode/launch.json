@@ -7,11 +7,15 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "启动程序",
+      "name": "tsx-debug",
       "skipFiles": [
-        "<node_internals>/**"
+        "<node_internals>/**",
+        "${workspaceFolder}/node_modules/**"
       ],
       "program": "${workspaceFolder}/src/bootstrap.ts",
+      "runtimeExecutable": "tsx",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
       "outFiles": [
         "${workspaceFolder}/**/*.js"
       ]
