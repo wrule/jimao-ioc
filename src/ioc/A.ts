@@ -1,14 +1,13 @@
 import * as swc from '@swc/core';
 
 function Decorator<T extends { new (...args: any[]): any }>(target: T) {
-  let classCode = target.toString();
-  if (classCode.startsWith('class{')) {
-    classCode = 'class _{' + classCode.slice(6);
-  }
+  const classCode = target.toString().replace(/^class\{/, 'class _{');
   const ast = swc.parseSync(classCode);
   const classDeclaration = ast.body[0] as swc.ClassDeclaration;
   const constructor = classDeclaration.body.find((node) => node.type === 'Constructor');
-  console.log(constructor?.params);
+  if (constructor) {
+    console.log(constructor.params[0].pat.value);
+  }
 }
 
 @Decorator
