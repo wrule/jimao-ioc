@@ -1,4 +1,11 @@
 import * as swc from '@swc/core';
+import { A } from './A';
+
+export
+function test() {
+  const a = new A(1, 9);
+  console.log(a.sum());
+}
 
 export
 async function getAllExportClass(tsPath: string) {

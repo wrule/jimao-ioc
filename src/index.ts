@@ -1,9 +1,10 @@
 import fs from 'fs/promises';
 import * as swc from '@swc/core';
-import { getAllExportClass } from './ioc';
+import { getAllExportClass, test } from './ioc';
 
 export
 async function main() {
-  const ast = await getAllExportClass('./src/services/NFTServices.ts');
-  console.log(ast.type);
+  test();
+  // const ast = await getAllExportClass('./src/services/NFTServices.ts');
+  // console.log(ast.type);
 }
