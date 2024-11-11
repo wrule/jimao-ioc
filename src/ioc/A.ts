@@ -1,6 +1,10 @@
 
-function Decorator(target: { new (...args: any[]): any }) {
-  console.log(target.toString());
+function Decorator<T extends { new (...args: any[]): { sum: () => number } }>(target: T) {
+  return class extends target {
+    public sumString() {
+      return this.sum().toString();
+    }
+  };
 }
 
 @Decorator
@@ -15,3 +19,5 @@ class A {
     return this.a + this.b;
   }
 }
+
+const a = new A(1, 2);

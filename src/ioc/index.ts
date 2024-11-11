@@ -4,7 +4,7 @@ import { A } from './A';
 export
 function test() {
   const a = new A(1, 9);
-  console.log(a.sum());
+  console.log(a.sumString);
 }
 
 export
