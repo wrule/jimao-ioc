@@ -1,10 +1,10 @@
 import * as swc from '@swc/core';
-import { A } from './A';
+import A from './A';
 
 export
 function test() {
   const a = new A(1, 9);
-  console.log(a.sumString);
+  // console.log(a.sumString);
 }
 
 export
