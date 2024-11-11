@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx ./src/bootstrap.ts",
+    "dev": "tsx watch ./src/bootstrap.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
